@@ -1,23 +1,20 @@
 #include<stdio.h>
-int main()
-{
+#include<string.h>
+int isPalindrome(char str[]){
+    int left=0,right=strlen(str)-1;
+    while(left<right){
+        if(str[left]!=str[right]){
+            return 0;
+        }
+        left++;
+        right--;
+    }
+    return 1;
+}
+int main(){
     int n;
     scanf("%d",&n);
-    int i=n;
-    int r=0;
-    while(n!=0)
-    {
-        int rem=n%10;
-        r=r*10+rem;
-        n=n/10;
-    }
-    printf("%d\n",r);
-    if(r==i)
-    {
-        printf("it is palindrome\n");
-    }
-    else{
-        printf("it is not palindrome\n");
-    }
-    return 0;
+    char str[n];
+    scanf("%s",str);
+    printf("%d",isPalindrome(str));
 }
