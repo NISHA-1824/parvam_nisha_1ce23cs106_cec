@@ -1,13 +1,24 @@
 #include<stdio.h>
-int main(){
-    int n;
-    scanf("%d",&n);
-    int r=0;
-    while(n!=0){
-        int rem=n%10;
-        r=r*10+rem;
-        n=n/10;
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node/next;
+};
+void create(){
+    struct node *newnode=(struct node*)
+    malloc(sizeof(struct node));
+    int value;
+    printf("enter the data:");
+    scanf("%d",&value);
+    newnode->data=value;
+    newnode->next=NULL;
+    if(head==NULL){
+        head=tail=newnode;
     }
-        printf("%d",r);
-        return 0;
+    else{
+        tail->next=newnode;
+        tail=newnode;
+    }
 }
+
