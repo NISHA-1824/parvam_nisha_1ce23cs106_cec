@@ -1,20 +1,24 @@
-#include<stdio.h>
-int ispresent(int n,int arr[],int target){
-    for(int i=0;i<n;i++){
-        if(arr[i]==target){
-            return 1;
-        }
-    }
-    return 0;
-}
+#include<stdio.h.>
+#include<math.h>
 int main(){
     int n;
+    printf("enter the size:");
     scanf("%d",&n);
     int arr[n];
     for(int i=0;i<n;i++){
+        printf("enter the element:");
         scanf("%d",&arr[i]);
     }
-    int target;
-    scanf("%d",&target);
-    printf("%d",ispresent(n,arr,target));
+    int min1=__INT_MAX__;
+    int min2=__INT_MAX__;
+    for(int i=0;i<n;i++){
+        if(arr[i]<min1){
+            min2=min1;
+            min1=arr[i];
+        }
+        else if(arr[i]<min2){
+            min2=arr[i];
+        }
+    }
+    printf("%d",min2);
 }
